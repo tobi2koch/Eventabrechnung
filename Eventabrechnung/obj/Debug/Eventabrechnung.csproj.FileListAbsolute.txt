@@ -1,0 +1,11 @@
+D:\C#\Eventabrechnung\Eventabrechnung\bin\Debug\Eventabrechnung.exe.config
+D:\C#\Eventabrechnung\Eventabrechnung\bin\Debug\Eventabrechnung.exe
+D:\C#\Eventabrechnung\Eventabrechnung\bin\Debug\Eventabrechnung.pdb
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.csprojResolveAssemblyReference.cache
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.start.resources
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.Properties.Resources.resources
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.csproj.GenerateResource.Cache
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.exe
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.pdb
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.menu.resources
+D:\C#\Eventabrechnung\Eventabrechnung\obj\Debug\Eventabrechnung.frmAddTeilnehmer.resources

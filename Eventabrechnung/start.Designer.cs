@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmdEventsAnlegen = new System.Windows.Forms.Button();
             this.cmdProjektAnlegen = new System.Windows.Forms.Button();
             this.pnBackground = new System.Windows.Forms.Panel();
             this.dg_Teilnehmer = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.cmdZeigeDinge = new System.Windows.Forms.Button();
             this.cmdClear = new System.Windows.Forms.Button();
             this.cmdCancel = new System.Windows.Forms.Button();
             this.cmdSendTeilnehmer = new System.Windows.Forms.Button();
@@ -57,9 +59,9 @@
             this.cmdTeilnehmerAnlegen = new System.Windows.Forms.Button();
             this.pnlEventsAnlegen = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cmbBezahler = new System.Windows.Forms.ComboBox();
+            this.cmbEventZuordnen = new System.Windows.Forms.ComboBox();
+            this.txtKostenEvent = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEV_Bezahler = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -68,12 +70,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.lblEventName = new System.Windows.Forms.Label();
             this.lblEventProjekt = new System.Windows.Forms.Label();
-            this.cmdZeigeDinge = new System.Windows.Forms.Button();
+            this.pnTeilnehmerZuordnen = new System.Windows.Forms.Panel();
+            this.cmbProjektZuordnen = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmd_ClearAddToProjekt = new System.Windows.Forms.Button();
+            this.cmd_cancelAddToProjekt = new System.Windows.Forms.Button();
+            this.cmd_AddToProjekt = new System.Windows.Forms.Button();
+            this.checklist_AddMember = new System.Windows.Forms.CheckedListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmdTeilnehmerZuordnen = new System.Windows.Forms.Button();
             this.pnBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_Teilnehmer)).BeginInit();
             this.pnProjekte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_projekte)).BeginInit();
             this.pnlEventsAnlegen.SuspendLayout();
+            this.pnTeilnehmerZuordnen.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdEventsAnlegen
@@ -126,6 +138,7 @@
             this.pnBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.pnBackground.Controls.Add(this.dg_Teilnehmer);
             this.pnBackground.Controls.Add(this.label4);
+            this.pnBackground.Controls.Add(this.cmdZeigeDinge);
             this.pnBackground.Controls.Add(this.cmdClear);
             this.pnBackground.Controls.Add(this.cmdCancel);
             this.pnBackground.Controls.Add(this.cmdSendTeilnehmer);
@@ -135,9 +148,9 @@
             this.pnBackground.Controls.Add(this.lblBenutzer);
             this.pnBackground.Controls.Add(this.txtName);
             this.pnBackground.Controls.Add(this.lblName);
-            this.pnBackground.Location = new System.Drawing.Point(192, 0);
+            this.pnBackground.Location = new System.Drawing.Point(4000, 0);
             this.pnBackground.Name = "pnBackground";
-            this.pnBackground.Size = new System.Drawing.Size(767, 564);
+            this.pnBackground.Size = new System.Drawing.Size(1094, 819);
             this.pnBackground.TabIndex = 4;
             // 
             // dg_Teilnehmer
@@ -146,10 +159,11 @@
             this.dg_Teilnehmer.AllowUserToDeleteRows = false;
             this.dg_Teilnehmer.AllowUserToResizeColumns = false;
             this.dg_Teilnehmer.AllowUserToResizeRows = false;
+            this.dg_Teilnehmer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dg_Teilnehmer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.dg_Teilnehmer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dg_Teilnehmer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_Teilnehmer.Location = new System.Drawing.Point(65, 230);
+            this.dg_Teilnehmer.Location = new System.Drawing.Point(65, 280);
             this.dg_Teilnehmer.MultiSelect = false;
             this.dg_Teilnehmer.Name = "dg_Teilnehmer";
             this.dg_Teilnehmer.ReadOnly = true;
@@ -158,7 +172,7 @@
             this.dg_Teilnehmer.ShowCellToolTips = false;
             this.dg_Teilnehmer.ShowEditingIcon = false;
             this.dg_Teilnehmer.ShowRowErrors = false;
-            this.dg_Teilnehmer.Size = new System.Drawing.Size(492, 319);
+            this.dg_Teilnehmer.Size = new System.Drawing.Size(358, 319);
             this.dg_Teilnehmer.TabIndex = 24;
             // 
             // label4
@@ -172,6 +186,21 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "TEILNEHMER ANLEGEN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cmdZeigeDinge
+            // 
+            this.cmdZeigeDinge.AutoSize = true;
+            this.cmdZeigeDinge.BackColor = System.Drawing.Color.Goldenrod;
+            this.cmdZeigeDinge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdZeigeDinge.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdZeigeDinge.Location = new System.Drawing.Point(66, 227);
+            this.cmdZeigeDinge.Name = "cmdZeigeDinge";
+            this.cmdZeigeDinge.Size = new System.Drawing.Size(131, 29);
+            this.cmdZeigeDinge.TabIndex = 21;
+            this.cmdZeigeDinge.Text = "ZEIGE TEILNEHMER";
+            this.cmdZeigeDinge.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmdZeigeDinge.UseVisualStyleBackColor = false;
+            this.cmdZeigeDinge.Click += new System.EventHandler(this.cmdZeigeDinge_Click);
             // 
             // cmdClear
             // 
@@ -285,9 +314,9 @@
             this.pnProjekte.Controls.Add(this.lblProjektbeschreibung);
             this.pnProjekte.Controls.Add(this.txtProjektname);
             this.pnProjekte.Controls.Add(this.lblProjektname);
-            this.pnProjekte.Location = new System.Drawing.Point(192, 0);
+            this.pnProjekte.Location = new System.Drawing.Point(4000, 0);
             this.pnProjekte.Name = "pnProjekte";
-            this.pnProjekte.Size = new System.Drawing.Size(800, 564);
+            this.pnProjekte.Size = new System.Drawing.Size(1127, 819);
             this.pnProjekte.TabIndex = 19;
             // 
             // cmdShowProjekts
@@ -295,12 +324,13 @@
             this.cmdShowProjekts.AutoSize = true;
             this.cmdShowProjekts.BackColor = System.Drawing.Color.Goldenrod;
             this.cmdShowProjekts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdShowProjekts.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdShowProjekts.Location = new System.Drawing.Point(451, 59);
+            this.cmdShowProjekts.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdShowProjekts.Location = new System.Drawing.Point(66, 234);
             this.cmdShowProjekts.Name = "cmdShowProjekts";
-            this.cmdShowProjekts.Size = new System.Drawing.Size(193, 45);
+            this.cmdShowProjekts.Size = new System.Drawing.Size(131, 29);
             this.cmdShowProjekts.TabIndex = 22;
             this.cmdShowProjekts.Text = "ZEIGE PROJEKTE";
+            this.cmdShowProjekts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdShowProjekts.UseVisualStyleBackColor = false;
             this.cmdShowProjekts.Click += new System.EventHandler(this.cmdShowProjekts_Click);
             // 
@@ -310,18 +340,29 @@
             this.dg_projekte.AllowUserToDeleteRows = false;
             this.dg_projekte.AllowUserToResizeColumns = false;
             this.dg_projekte.AllowUserToResizeRows = false;
+            this.dg_projekte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dg_projekte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.dg_projekte.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dg_projekte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSlateGray;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Goldenrod;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dg_projekte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_projekte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_projekte.Location = new System.Drawing.Point(65, 244);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_projekte.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dg_projekte.Location = new System.Drawing.Point(65, 321);
+            this.dg_projekte.MinimumSize = new System.Drawing.Size(400, 0);
             this.dg_projekte.MultiSelect = false;
             this.dg_projekte.Name = "dg_projekte";
             this.dg_projekte.ReadOnly = true;
@@ -330,7 +371,7 @@
             this.dg_projekte.ShowCellToolTips = false;
             this.dg_projekte.ShowEditingIcon = false;
             this.dg_projekte.ShowRowErrors = false;
-            this.dg_projekte.Size = new System.Drawing.Size(688, 305);
+            this.dg_projekte.Size = new System.Drawing.Size(400, 255);
             this.dg_projekte.TabIndex = 25;
             // 
             // label3
@@ -338,7 +379,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(274, 17);
+            this.label3.Location = new System.Drawing.Point(267, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 23);
             this.label3.TabIndex = 22;
@@ -451,9 +492,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlEventsAnlegen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.pnlEventsAnlegen.Controls.Add(this.label2);
-            this.pnlEventsAnlegen.Controls.Add(this.comboBox2);
-            this.pnlEventsAnlegen.Controls.Add(this.comboBox1);
-            this.pnlEventsAnlegen.Controls.Add(this.textBox4);
+            this.pnlEventsAnlegen.Controls.Add(this.cmbBezahler);
+            this.pnlEventsAnlegen.Controls.Add(this.cmbEventZuordnen);
+            this.pnlEventsAnlegen.Controls.Add(this.txtKostenEvent);
             this.pnlEventsAnlegen.Controls.Add(this.label1);
             this.pnlEventsAnlegen.Controls.Add(this.lblEV_Bezahler);
             this.pnlEventsAnlegen.Controls.Add(this.textBox1);
@@ -462,9 +503,9 @@
             this.pnlEventsAnlegen.Controls.Add(this.button3);
             this.pnlEventsAnlegen.Controls.Add(this.lblEventName);
             this.pnlEventsAnlegen.Controls.Add(this.lblEventProjekt);
-            this.pnlEventsAnlegen.Location = new System.Drawing.Point(3500, 0);
+            this.pnlEventsAnlegen.Location = new System.Drawing.Point(192, 0);
             this.pnlEventsAnlegen.Name = "pnlEventsAnlegen";
-            this.pnlEventsAnlegen.Size = new System.Drawing.Size(800, 564);
+            this.pnlEventsAnlegen.Size = new System.Drawing.Size(1127, 819);
             this.pnlEventsAnlegen.TabIndex = 20;
             // 
             // label2
@@ -478,29 +519,29 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "EVENTS ANLEGEN";
             // 
-            // comboBox2
+            // cmbBezahler
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(200, 167);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(224, 23);
-            this.comboBox2.TabIndex = 24;
+            this.cmbBezahler.FormattingEnabled = true;
+            this.cmbBezahler.Location = new System.Drawing.Point(200, 167);
+            this.cmbBezahler.Name = "cmbBezahler";
+            this.cmbBezahler.Size = new System.Drawing.Size(224, 23);
+            this.cmbBezahler.TabIndex = 24;
             // 
-            // comboBox1
+            // cmbEventZuordnen
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(200, 95);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 23);
-            this.comboBox1.TabIndex = 23;
+            this.cmbEventZuordnen.FormattingEnabled = true;
+            this.cmbEventZuordnen.Location = new System.Drawing.Point(200, 95);
+            this.cmbEventZuordnen.Name = "cmbEventZuordnen";
+            this.cmbEventZuordnen.Size = new System.Drawing.Size(224, 23);
+            this.cmbEventZuordnen.TabIndex = 23;
             // 
-            // textBox4
+            // txtKostenEvent
             // 
-            this.textBox4.Location = new System.Drawing.Point(200, 131);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(224, 23);
-            this.textBox4.TabIndex = 22;
+            this.txtKostenEvent.Location = new System.Drawing.Point(200, 131);
+            this.txtKostenEvent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKostenEvent.Name = "txtKostenEvent";
+            this.txtKostenEvent.Size = new System.Drawing.Size(224, 23);
+            this.txtKostenEvent.TabIndex = 22;
             // 
             // label1
             // 
@@ -537,7 +578,7 @@
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(323, 445);
+            this.button1.Location = new System.Drawing.Point(323, 214);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 29);
             this.button1.TabIndex = 17;
@@ -549,7 +590,7 @@
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(210, 445);
+            this.button2.Location = new System.Drawing.Point(210, 214);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 16;
@@ -561,7 +602,7 @@
             this.button3.AutoSize = true;
             this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(66, 445);
+            this.button3.Location = new System.Drawing.Point(66, 214);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(131, 29);
             this.button3.TabIndex = 15;
@@ -590,27 +631,146 @@
             this.lblEventProjekt.TabIndex = 9;
             this.lblEventProjekt.Text = "WELCHES PROJEKT";
             // 
-            // cmdZeigeDinge
+            // pnTeilnehmerZuordnen
             // 
-            this.cmdZeigeDinge.AutoSize = true;
-            this.cmdZeigeDinge.BackColor = System.Drawing.Color.Goldenrod;
-            this.cmdZeigeDinge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdZeigeDinge.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdZeigeDinge.Location = new System.Drawing.Point(0, 133);
-            this.cmdZeigeDinge.Name = "cmdZeigeDinge";
-            this.cmdZeigeDinge.Size = new System.Drawing.Size(193, 45);
-            this.cmdZeigeDinge.TabIndex = 21;
-            this.cmdZeigeDinge.Text = "ZEIGE DINGE";
-            this.cmdZeigeDinge.UseVisualStyleBackColor = false;
-            this.cmdZeigeDinge.Click += new System.EventHandler(this.cmdZeigeDinge_Click);
+            this.pnTeilnehmerZuordnen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnTeilnehmerZuordnen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.pnTeilnehmerZuordnen.Controls.Add(this.cmbProjektZuordnen);
+            this.pnTeilnehmerZuordnen.Controls.Add(this.label5);
+            this.pnTeilnehmerZuordnen.Controls.Add(this.cmd_ClearAddToProjekt);
+            this.pnTeilnehmerZuordnen.Controls.Add(this.cmd_cancelAddToProjekt);
+            this.pnTeilnehmerZuordnen.Controls.Add(this.cmd_AddToProjekt);
+            this.pnTeilnehmerZuordnen.Controls.Add(this.checklist_AddMember);
+            this.pnTeilnehmerZuordnen.Controls.Add(this.label6);
+            this.pnTeilnehmerZuordnen.Controls.Add(this.label7);
+            this.pnTeilnehmerZuordnen.Location = new System.Drawing.Point(4000, 0);
+            this.pnTeilnehmerZuordnen.Name = "pnTeilnehmerZuordnen";
+            this.pnTeilnehmerZuordnen.Size = new System.Drawing.Size(1127, 819);
+            this.pnTeilnehmerZuordnen.TabIndex = 33;
+            // 
+            // cmbProjektZuordnen
+            // 
+            this.cmbProjektZuordnen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProjektZuordnen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbProjektZuordnen.FormattingEnabled = true;
+            this.cmbProjektZuordnen.Location = new System.Drawing.Point(200, 86);
+            this.cmbProjektZuordnen.Name = "cmbProjektZuordnen";
+            this.cmbProjektZuordnen.Size = new System.Drawing.Size(226, 23);
+            this.cmbProjektZuordnen.TabIndex = 33;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(65, 89);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 15);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "PROJEKT";
+            // 
+            // cmd_ClearAddToProjekt
+            // 
+            this.cmd_ClearAddToProjekt.AutoSize = true;
+            this.cmd_ClearAddToProjekt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmd_ClearAddToProjekt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_ClearAddToProjekt.Location = new System.Drawing.Point(325, 331);
+            this.cmd_ClearAddToProjekt.Name = "cmd_ClearAddToProjekt";
+            this.cmd_ClearAddToProjekt.Size = new System.Drawing.Size(101, 29);
+            this.cmd_ClearAddToProjekt.TabIndex = 31;
+            this.cmd_ClearAddToProjekt.Text = "VERWERFEN";
+            this.cmd_ClearAddToProjekt.UseVisualStyleBackColor = false;
+            this.cmd_ClearAddToProjekt.Click += new System.EventHandler(this.cmd_ClearAddToProjekt_Click);
+            // 
+            // cmd_cancelAddToProjekt
+            // 
+            this.cmd_cancelAddToProjekt.AutoSize = true;
+            this.cmd_cancelAddToProjekt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmd_cancelAddToProjekt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_cancelAddToProjekt.Location = new System.Drawing.Point(212, 331);
+            this.cmd_cancelAddToProjekt.Name = "cmd_cancelAddToProjekt";
+            this.cmd_cancelAddToProjekt.Size = new System.Drawing.Size(100, 29);
+            this.cmd_cancelAddToProjekt.TabIndex = 30;
+            this.cmd_cancelAddToProjekt.Text = "ABBRECHEN";
+            this.cmd_cancelAddToProjekt.UseVisualStyleBackColor = false;
+            this.cmd_cancelAddToProjekt.Click += new System.EventHandler(this.cmd_cancelAddToProjekt_Click);
+            // 
+            // cmd_AddToProjekt
+            // 
+            this.cmd_AddToProjekt.AutoSize = true;
+            this.cmd_AddToProjekt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmd_AddToProjekt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_AddToProjekt.Location = new System.Drawing.Point(68, 331);
+            this.cmd_AddToProjekt.Name = "cmd_AddToProjekt";
+            this.cmd_AddToProjekt.Size = new System.Drawing.Size(131, 29);
+            this.cmd_AddToProjekt.TabIndex = 29;
+            this.cmd_AddToProjekt.Text = "ÜBERNEHMEN";
+            this.cmd_AddToProjekt.UseVisualStyleBackColor = false;
+            this.cmd_AddToProjekt.Click += new System.EventHandler(this.cmd_AddToProjekt_Click);
+            // 
+            // checklist_AddMember
+            // 
+            this.checklist_AddMember.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checklist_AddMember.FormattingEnabled = true;
+            this.checklist_AddMember.Location = new System.Drawing.Point(202, 138);
+            this.checklist_AddMember.Name = "checklist_AddMember";
+            this.checklist_AddMember.Size = new System.Drawing.Size(224, 180);
+            this.checklist_AddMember.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(64, 138);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 15);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "TEILNEHMER";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(220, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(208, 23);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "TEILNEHMER ZUORDNEN";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cmdTeilnehmerZuordnen
+            // 
+            this.cmdTeilnehmerZuordnen.AutoSize = true;
+            this.cmdTeilnehmerZuordnen.BackColor = System.Drawing.Color.LightSlateGray;
+            this.cmdTeilnehmerZuordnen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.cmdTeilnehmerZuordnen.FlatAppearance.BorderSize = 0;
+            this.cmdTeilnehmerZuordnen.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.cmdTeilnehmerZuordnen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.cmdTeilnehmerZuordnen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.cmdTeilnehmerZuordnen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdTeilnehmerZuordnen.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdTeilnehmerZuordnen.ForeColor = System.Drawing.Color.White;
+            this.cmdTeilnehmerZuordnen.Location = new System.Drawing.Point(0, 133);
+            this.cmdTeilnehmerZuordnen.Name = "cmdTeilnehmerZuordnen";
+            this.cmdTeilnehmerZuordnen.Size = new System.Drawing.Size(193, 45);
+            this.cmdTeilnehmerZuordnen.TabIndex = 34;
+            this.cmdTeilnehmerZuordnen.Text = "TEILNEHMER ZUORDNEN";
+            this.cmdTeilnehmerZuordnen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmdTeilnehmerZuordnen.UseVisualStyleBackColor = true;
+            this.cmdTeilnehmerZuordnen.Click += new System.EventHandler(this.cmdTeilnehmerZuordnen_Click);
             // 
             // start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(957, 561);
-            this.Controls.Add(this.cmdZeigeDinge);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(221)))), ((int)(((byte)(231)))));
+            this.ClientSize = new System.Drawing.Size(1284, 816);
+            this.Controls.Add(this.cmdTeilnehmerZuordnen);
+            this.Controls.Add(this.pnTeilnehmerZuordnen);
             this.Controls.Add(this.pnlEventsAnlegen);
             this.Controls.Add(this.pnProjekte);
             this.Controls.Add(this.cmdProjektAnlegen);
@@ -632,6 +792,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_projekte)).EndInit();
             this.pnlEventsAnlegen.ResumeLayout(false);
             this.pnlEventsAnlegen.PerformLayout();
+            this.pnTeilnehmerZuordnen.ResumeLayout(false);
+            this.pnTeilnehmerZuordnen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,18 +829,28 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblEventName;
         private System.Windows.Forms.Label lblEventProjekt;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtKostenEvent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblEV_Bezahler;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBezahler;
+        private System.Windows.Forms.ComboBox cmbEventZuordnen;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dg_Teilnehmer;
-        private System.Windows.Forms.Button cmdZeigeDinge;
         private System.Windows.Forms.DataGridView dg_projekte;
         private System.Windows.Forms.Button cmdShowProjekts;
+        private System.Windows.Forms.Panel pnTeilnehmerZuordnen;
+        private System.Windows.Forms.Button cmd_ClearAddToProjekt;
+        private System.Windows.Forms.Button cmd_cancelAddToProjekt;
+        private System.Windows.Forms.Button cmd_AddToProjekt;
+        private System.Windows.Forms.CheckedListBox checklist_AddMember;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button cmdTeilnehmerZuordnen;
+        private System.Windows.Forms.Button cmdZeigeDinge;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbProjektZuordnen;
     }
 }
 
